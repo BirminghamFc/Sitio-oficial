@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birmingham FC</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #111111;
+        }
+
+        header {
+            height: 64px;
+            border-bottom: 1px solid #eeeeee;
+            display: flex;
+            align-items: center;
+            background: white;
+        }
+
+        .header {
+            width: 900px;
+            max-width: calc(100% - 40px);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        .logo-circle {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #ed1b35;
+        }
+
+        nav {
+            display: flex;
+            gap: 6px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            padding: 10px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        nav a.active {
+            background: #ed1b35;
+            color: white;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #ed1735, #c90d2b);
+            min-height: 470px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .hero-logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: white;
+            margin-bottom: 28px;
+        }
+
+        h1 {
+            font-size: 46px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 300px;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .button {
+            height: 48px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button-white {
+            background: white;
+            color: #ed1735;
+        }
+
+        .button-outline {
+            border: 1px solid rgba(255,255,255,.7);
+            color: white;
+        }
+
+        .section {
+            width: 900px;
+            max-width: calc(100% - 40px);
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            border: 1px solid #e5e5e5;
+            border-radius: 15px;
+            padding: 20px;
+            min-height: 120px;
+        }
+
+        .icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #fde8ec;
+            color: #ed1735;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 14px;
+            font-size: 20px;
+        }
+
+        .card h3 {
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .card p {
+            color: #888;
+            font-size: 13px;
+        }
+
+        .news {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .news-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .news-image {
+            height: 190px;
+            background: #eeeeee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #bbbbbb;
+            font-weight: bold;
+        }
+
+        .news-content {
+            padding: 18px;
+        }
+
+        .category {
+            color: #ed1735;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 9px;
+        }
+
+        .news-content h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .news-content p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        footer {
+            background: #050505;
+            color: white;
+            text-align: center;
+            padding: 50px 20px 25px;
+        }
+
+        footer h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #222;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            width: 900px;
+            max-width: 100%;
+            color: #777;
+            font-size: 12px;
+        }
+
+        @media (max-width: 750px) {
+
+            header {
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 8px 10px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .cards,
+            .news {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header">
+
+        <div class="logo">
+            <div class="logo-circle"></div>
+            <span>BIRMINGHAM FC</span>
+        </div>
+
+        <nav>
+            <a href="#" class="active">Inicio</a>
+            <a href="#">Próximos partidos</a>
+            <a href="#">Novedades</a>
+            <a href="#">El Club</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-logo"></div>
+
+        <h1>BIRMINGHAM FC</h1>
+
+        <p>
+            Bienvenidos al sitio oficial del club.
+            Pasión roja y blanca.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#" class="button button-white">
+                Próximos partidos →
+            </a>
+
+            <a href="#" class="button button-outline">
+                Últimas novedades
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <h2>Accesos directos</h2>
+
+    <p class="subtitle">
+        Todo lo que necesitas del Birmingham FC, a un solo toque.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">▣</div>
+            <h3>Próximos partidos</h3>
+            <p>Calendario y resultados</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">▤</div>
+            <h3>Últimas novedades</h3>
+            <p>Noticias del club</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">♙</div>
+            <h3>Plantilla</h3>
+            <p>Nuestros jugadores</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">♢</div>
+            <h3>El Club</h3>
+            <p>Historia y valores</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">♜</div>
+            <h3>Competiciones</h3>
+            <p>Tabla de clasificación</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">▣</div>
+            <h3>Fotografías</h3>
+            <p>Fotos de cada partido</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <h2>Últimas novedades</h2>
+
+    <p class="subtitle">
+        Mantenete al día con el club
+    </p>
+
+    <div class="news">
+
+        <article class="news-card">
+
+            <div class="news-image">
+                BIRMINGHAM FC
+            </div>
+
+            <div class="news-content">
+
+                <div class="category">
+                    CLUB
+                </div>
+
+                <h3>
+                    Birmingham FC cerró su pretemporada
+                </h3>
+
+                <p>
+                    Con el plantel listo, el club espera con gran expectativa
+                    el comienzo de la competencia oficial.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="news-card">
+
+            <div class="news-image">
+                BIRMINGHAM FC
+            </div>
+
+            <div class="news-content">
+
+                <div class="category">
+                    FICHAJES
+                </div>
+
+                <h3>
+                    Nuevas incorporaciones para la temporada 2026
+                </h3>
+
+                <p>
+                    El club continúa fortaleciendo su proyecto deportivo.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="news-card">
+
+            <div class="news-image">
+                BIRMINGHAM FC
+            </div>
+
+            <div class="news-content">
+
+                <div class="category">
+                    CLUB
+                </div>
+
+                <h3>
+                    Nueva indumentaria oficial
+                </h3>
+
+                <p>
+                    Birmingham FC presentó su nueva indumentaria
+                    para la temporada 2026.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h2>BIRMINGHAM FC</h2>
+
+    <p>
+        Pasión roja y blanca, partido a partido.
+    </p>
+
+    <div class="footer-bottom">
+        © 2026 Birmingham FC. Todos los derechos reservados.
+    </div>
+
+</footer>
+
+</body>
+</html>

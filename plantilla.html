@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Plantilla | Birmingham FC</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7f7f8;
+    color:#111;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HEADER */
+
+header{
+    height:72px;
+    background:white;
+    border-bottom:1px solid #e8e8e8;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:14px;
+    font-weight:800;
+}
+
+.brand img{
+    width:43px;
+    height:43px;
+    object-fit:contain;
+}
+
+nav{
+    display:flex;
+    gap:5px;
+}
+
+nav a{
+    padding:9px 14px;
+    border-radius:20px;
+
+    font-size:13px;
+    font-weight:600;
+
+    color:#444;
+}
+
+nav a:hover{
+    background:#f4f4f4;
+}
+
+nav a.active{
+    background:#e71937;
+    color:white;
+}
+
+/* HERO */
+
+.page-hero{
+    background:
+    radial-gradient(
+        circle at 50% 20%,
+        rgba(255,255,255,.14),
+        transparent 35%
+    ),
+    linear-gradient(
+        135deg,
+        #ef1938,
+        #c80729
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:65px 20px;
+}
+
+.page-hero img{
+    width:75px;
+    height:75px;
+
+    object-fit:contain;
+
+    margin-bottom:15px;
+}
+
+.page-hero h1{
+    font-size:40px;
+    font-weight:900;
+
+    margin-bottom:7px;
+}
+
+.page-hero p{
+    font-size:14px;
+    opacity:.9;
+}
+
+/* CONTENEDOR */
+
+.container{
+    width:88%;
+    max-width:1100px;
+    margin:auto;
+}
+
+section{
+    padding:60px 0;
+}
+
+.section-title{
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:27px;
+    margin-bottom:5px;
+}
+
+.section-title p{
+    color:#888;
+    font-size:13px;
+}
+
+/* PLANTEL */
+
+.players{
+    display:grid;
+
+    grid-template-columns:
+    repeat(5,1fr);
+
+    gap:16px;
+}
+
+.player{
+    background:white;
+
+    border:1px solid #e7e7e7;
+
+    border-radius:18px;
+
+    padding:25px 15px;
+
+    text-align:center;
+
+    transition:.2s;
+}
+
+.player:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 14px 30px rgba(0,0,0,.07);
+}
+
+.number{
+    width:64px;
+    height:64px;
+
+    margin:0 auto 16px;
+
+    border-radius:50%;
+
+    background:#e71937;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    font-weight:900;
+
+    box-shadow:
+    0 8px 18px rgba(231,25,55,.22);
+}
+
+.player h3{
+    font-size:14px;
+
+    margin-bottom:5px;
+}
+
+.player p{
+    color:#888;
+
+    font-size:11px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#050505;
+
+    color:white;
+
+    text-align:center;
+
+    padding:45px 20px 25px;
+}
+
+.footer-logo{
+    width:55px;
+    height:55px;
+
+    margin:0 auto 12px;
+}
+
+.footer-logo img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+footer h2{
+    font-size:18px;
+
+    margin-bottom:5px;
+}
+
+footer p{
+    color:#888;
+
+    font-size:12px;
+}
+
+.footer-bottom{
+    border-top:1px solid #222;
+
+    margin:28px auto 0;
+
+    padding-top:17px;
+
+    color:#666;
+
+    font-size:10px;
+
+    max-width:1000px;
+}
+
+/* TABLET */
+
+@media(max-width:950px){
+
+    .players{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header{
+        height:auto;
+
+        padding:12px 18px;
+
+        flex-direction:column;
+
+        gap:10px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+    .page-hero h1{
+        font-size:34px;
+    }
+
+    .players{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<a href="index.html" class="brand">
+
+<img src="escudo.png" alt="Birmingham FC">
+
+<span>BIRMINGHAM FC</span>
+
+</a>
+
+<nav>
+
+<a href="index.html">
+Inicio
+</a>
+
+<a href="partidos.html">
+Partidos
+</a>
+
+<a href="novedades.html">
+Novedades
+</a>
+
+<a href="plantilla.html" class="active">
+Plantilla
+</a>
+
+<a href="#">
+El Club
+</a>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+<img src="escudo.png" alt="Escudo Birmingham FC">
+
+<h1>
+PLANTILLA
+</h1>
+
+<p>
+Los jugadores que defienden nuestra camiseta
+</p>
+
+</section>
+
+<!-- JUGADORES -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Primer equipo
+</h2>
+
+<p>
+Plantilla oficial · Temporada 2026
+</p>
+
+</div>
+
+<div class="players">
+
+<div class="player">
+
+<div class="number">
+1
+</div>
+
+<h3>
+Damian
+</h3>
+
+<p>
+Golero
+</p>
+
+</div>
+
+<div class="player">
+
+<div class="number">
+3
+</div>
+
+<h3>
+Sebastian
+</h3>
+
+<p>
+Defensa
+</p>
+
+</div>
+
+<div class="player">
+
+<div class="number">
+2
+</div>
+
+<h3>
+Rodrigo
+</h3>
+
+<p>
+Defensa
+</p>
+
+</div>
+
+<div class="player">
+
+<div class="number">
+4
+</div>
+
+<h3>
+Tony
+</h3>
+
+<p>
+Defensa
+</p>
+
+</div>
+
+<div class="player">
+
+<div class="number">
+5
+</div>
+
+<h3>
+Mauricio Silva
+</h3>
+
+<p>
+Mediocampista
+</p>
+
+</div>
+
+<div class="player">
+
+<div class="number">
+7
+</div>
+
+<h3>
+Elias Coimbra
+</h3>
+
+<p>
+Mediocampista
+</p>
+
+</div>
+
+<div class="player">
+
+<div class="number">
+8
+</div>
+
+<h3>
+Ezequiel Coimbra
+</h3>
+
+<p>
+Volante
+</p>
+
+</div>
+
+<div class="player">
+
+<div class="number">
+10
+</div>
+
+<h3>
+Kevin Marquez
+</h3>
+
+<p>
+Enganche
+</p>
+
+</div>
+
+<div class="player">
+
+<div class="number">
+9
+</div>
+
+<h3>
+Mathias Actis
+</h3>
+
+<p>
+Delantero
+</p>
+
+</div>
+
+<div class="player">
+
+<div class="number">
+11
+</div>
+
+<h3>
+Facundo Robertt
+</h3>
+
+<p>
+Volante
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+
+<img src="escudo.png" alt="Birmingham FC">
+
+</div>
+
+<h2>
+BIRMINGHAM FC
+</h2>
+
+<p>
+Pasión roja y blanca, partido a partido.
+</p>
+
+<div class="footer-bottom">
+
+© 2026 Birmingham FC · Sitio oficial
+
+</div>
+
+</footer>
+
+</body>
+</html>

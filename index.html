@@ -1,662 +1,10 @@
 <!DOCTYPE html>
 
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Birmingham FC | Sitio Oficial</title>
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Inter,Arial,Helvetica,sans-serif;
-    background:#fafafa;
-    color:#111;
-    line-height:1.5;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-/* ================= HEADER ================= */
-
-header{
-    height:70px;
-    background:rgba(255,255,255,.96);
-    border-bottom:1px solid #eeeeee;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    backdrop-filter:blur(12px);
-}
-
-.header{
-    max-width:1180px;
-    height:100%;
-    margin:auto;
-    padding:0 25px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:11px;
-    font-weight:800;
-    font-size:14px;
-    letter-spacing:.4px;
-}
-
-.brand img{
-    width:42px;
-    height:42px;
-    object-fit:contain;
-}
-
-.navigation{
-    display:flex;
-    align-items:center;
-    gap:4px;
-}
-
-.navigation a{
-    padding:9px 14px;
-    border-radius:22px;
-    font-size:13px;
-    color:#444;
-    transition:.2s;
-}
-
-.navigation a:hover{
-    background:#f5f5f5;
-}
-
-.navigation a.active{
-    background:#e71937;
-    color:#fff;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    background:
-    radial-gradient(circle at 50% 10%,rgba(255,255,255,.16),transparent 30%),
-    linear-gradient(135deg,#ef1938 0%,#c9092a 100%);
-
-    min-height:500px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-    color:white;
-
-    position:relative;
-    overflow:hidden;
-}
-
-.hero:before{
-    content:"";
-    position:absolute;
-    width:620px;
-    height:620px;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:50%;
-}
-
-.hero:after{
-    content:"";
-    position:absolute;
-    width:420px;
-    height:420px;
-    border:1px solid rgba(255,255,255,.06);
-    border-radius:50%;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:680px;
-    padding:40px 20px;
-}
-
-.hero-logo{
-    width:105px;
-    height:105px;
-    margin:0 auto 25px;
-
-    border-radius:50%;
-    background:#fff;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.18);
-}
-
-.hero-logo img{
-    width:88px;
-    height:88px;
-    object-fit:contain;
-}
-
-.hero h1{
-    font-size:clamp(40px,6vw,60px);
-    font-weight:900;
-    letter-spacing:-1.5px;
-    margin-bottom:10px;
-}
-
-.hero p{
-    font-size:15px;
-    opacity:.92;
-    margin-bottom:28px;
-}
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-}
-
-.button{
-    min-width:190px;
-    height:46px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    border-radius:25px;
-
-    font-size:13px;
-    font-weight:700;
-
-    transition:.2s;
-}
-
-.button:hover{
-    transform:translateY(-2px);
-}
-
-.button-white{
-    background:white;
-    color:#e71937;
-}
-
-.button-transparent{
-    border:1px solid rgba(255,255,255,.65);
-    color:white;
-}
-
-/* ================= GENERAL ================= */
-
-.section{
-    max-width:1180px;
-    margin:auto;
-    padding:72px 25px;
-}
-
-.section-head{
-    margin-bottom:30px;
-}
-
-.section-head h2{
-    font-size:28px;
-    font-weight:800;
-    letter-spacing:-.5px;
-    margin-bottom:5px;
-}
-
-.section-head p{
-    color:#858585;
-    font-size:13px;
-}
-
-/* ================= QUICK ACCESS ================= */
-
-.quick-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.quick{
-    background:#fff;
-    border:1px solid #e9e9e9;
-    border-radius:16px;
-    padding:23px;
-
-    transition:.2s;
-}
-
-.quick:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 30px rgba(0,0,0,.06);
-}
-
-.quick-icon{
-    width:42px;
-    height:42px;
-
-    background:#fde8ec;
-    color:#e71937;
-
-    border-radius:11px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:19px;
-
-    margin-bottom:15px;
-}
-
-.quick h3{
-    font-size:15px;
-    margin-bottom:5px;
-}
-
-.quick p{
-    font-size:12px;
-    color:#8b8b8b;
-}
-
-/* ================= NEXT MATCH ================= */
-
-.next-match{
-    background:#111;
-    color:white;
-    border-radius:20px;
-    padding:35px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:25px;
-}
-
-.match-label{
-    color:#e71937;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1px;
-    margin-bottom:8px;
-}
-
-.next-match h3{
-    font-size:22px;
-    margin-bottom:4px;
-}
-
-.next-match p{
-    color:#999;
-    font-size:13px;
-}
-
-.match-date{
-    text-align:center;
-    min-width:120px;
-}
-
-.match-date strong{
-    display:block;
-    font-size:24px;
-}
-
-.match-date span{
-    color:#999;
-    font-size:11px;
-}
-
-/* ================= NEWS ================= */
-
-.news-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.news-card{
-    background:white;
-    border:1px solid #e8e8e8;
-    border-radius:17px;
-    overflow:hidden;
-    transition:.2s;
-}
-
-.news-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 30px rgba(0,0,0,.07);
-}
-
-.news-image{
-    height:190px;
-
-    background:
-    linear-gradient(135deg,#ed1938,#c9092a);
-
-    color:white;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:18px;
-    font-weight:900;
-    letter-spacing:1px;
-}
-
-.news-body{
-    padding:20px;
-}
-
-.news-category{
-    color:#e71937;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:.8px;
-    margin-bottom:8px;
-}
-
-.news-body h3{
-    font-size:16px;
-    line-height:1.35;
-    margin-bottom:9px;
-}
-
-.news-body p{
-    font-size:12px;
-    color:#777;
-    line-height:1.6;
-}
-
-/* ================= PLANTEL ================= */
-
-.players{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:14px;
-}
-
-.player{
-    background:white;
-    border:1px solid #e8e8e8;
-    border-radius:16px;
-    padding:20px 12px;
-    text-align:center;
-}
-
-.player-number{
-    width:54px;
-    height:54px;
-
-    margin:0 auto 13px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:#e71937;
-    color:white;
-
-    font-size:18px;
-    font-weight:900;
-}
-
-.player h3{
-    font-size:13px;
-    margin-bottom:4px;
-}
-
-.player p{
-    font-size:11px;
-    color:#888;
-}
-
-/* ================= TABLE ================= */
-
-.table-box{
-    background:white;
-    border:1px solid #e7e7e7;
-    border-radius:17px;
-    overflow:hidden;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th{
-    background:#fafafa;
-    color:#888;
-    font-size:11px;
-    text-align:left;
-    padding:15px;
-}
-
-td{
-    padding:15px;
-    border-top:1px solid #eeeeee;
-    font-size:12px;
-}
-
-td:first-child{
-    font-weight:800;
-    color:#e71937;
-}
-
-/* ================= CLUB ================= */
-
-.club{
-    background:#111;
-    color:white;
-    border-radius:20px;
-    padding:40px;
-}
-
-.club h2{
-    font-size:25px;
-    margin-bottom:15px;
-}
-
-.club p{
-    max-width:850px;
-    color:#bcbcbc;
-    font-size:13px;
-    line-height:1.8;
-}
-
-.club-values{
-    margin-top:28px;
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:14px;
-}
-
-.value{
-    border:1px solid #333;
-    border-radius:13px;
-    padding:18px;
-}
-
-.value strong{
-    display:block;
-    font-size:13px;
-    margin-bottom:5px;
-}
-
-.value span{
-    color:#888;
-    font-size:11px;
-}
-
-/* ================= PHOTOS ================= */
-
-.photos{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.photo{
-    height:180px;
-    border-radius:16px;
-
-    background:
-    linear-gradient(135deg,#ed1938,#c9092a);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    color:white;
-    font-weight:800;
-    font-size:14px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#050505;
-    color:white;
-    text-align:center;
-    padding:55px 20px 25px;
-}
-
-.footer-logo{
-    width:58px;
-    height:58px;
-    margin:0 auto 13px;
-}
-
-.footer-logo img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-}
-
-footer h2{
-    font-size:18px;
-    margin-bottom:6px;
-}
-
-footer p{
-    color:#888;
-    font-size:12px;
-}
-
-.footer-bottom{
-    max-width:1100px;
-    margin:32px auto 0;
-    padding-top:18px;
-    border-top:1px solid #222;
-    color:#666;
-    font-size:10px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-    .header{
-        height:auto;
-        padding:12px 18px;
-        flex-direction:column;
-        gap:10px;
-    }
-
-    .navigation{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .quick-grid,
-    .news-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .players{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-}
-
-@media(max-width:600px){
-
-    .hero{
-        min-height:510px;
-    }
-
-    .hero h1{
-        font-size:38px;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .button{
-        width:100%;
-        max-width:290px;
-    }
-
-    .section{
-        padding:58px 18px;
-    }
-
-    .quick-grid,
-    .news-grid,
-    .players,
-    .photos{
-        grid-template-columns:1fr;
-    }
-
-    .next-match{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .match-date{
-        text-align:left;
-    }
-
-    .club{
-        padding:28px 22px;
-    }
-
-    .club-values{
-        grid-template-columns:1fr;
-    }
-
-}
-
-</style>
+<style> *{ margin:0; padding:0; box-sizing:border-box; } html{ scroll-behavior:smooth; } body{ font-family:Inter,Arial,Helvetica,sans-serif; background:#fafafa; color:#111; line-height:1.5; } a{ text-decoration:none; color:inherit; } /* ================= HEADER ================= */ header{ height:70px; background:rgba(255,255,255,.96); border-bottom:1px solid #eeeeee; position:sticky; top:0; z-index:1000; backdrop-filter:blur(12px); } .header{ max-width:1180px; height:100%; margin:auto; padding:0 25px; display:flex; align-items:center; justify-content:space-between; } .brand{ display:flex; align-items:center; gap:11px; font-weight:800; font-size:14px; letter-spacing:.4px; } .brand img{ width:42px; height:42px; object-fit:contain; } .navigation{ display:flex; align-items:center; gap:4px; } .navigation a{ padding:9px 14px; border-radius:22px; font-size:13px; color:#444; transition:.2s; } .navigation a:hover{ background:#f5f5f5; } .navigation a.active{ background:#e71937; color:#fff; } /* ================= HERO ================= */ .hero{ background: radial-gradient(circle at 50% 10%,rgba(255,255,255,.16),transparent 30%), linear-gradient(135deg,#ef1938 0%,#c9092a 100%); min-height:500px; display:flex; justify-content:center; align-items:center; text-align:center; color:white; position:relative; overflow:hidden; } .hero:before{ content:""; position:absolute; width:620px; height:620px; border:1px solid rgba(255,255,255,.08); border-radius:50%; } .hero:after{ content:""; position:absolute; width:420px; height:420px; border:1px solid rgba(255,255,255,.06); border-radius:50%; } .hero-content{ position:relative; z-index:2; max-width:680px; padding:40px 20px; } .hero-logo{ width:105px; height:105px; margin:0 auto 25px; border-radius:50%; background:#fff; display:flex; justify-content:center; align-items:center; box-shadow:0 15px 35px rgba(0,0,0,.18); } .hero-logo img{ width:88px; height:88px; object-fit:contain; } .hero h1{ font-size:clamp(40px,6vw,60px); font-weight:900; letter-spacing:-1.5px; margin-bottom:10px; } .hero p{ font-size:15px; opacity:.92; margin-bottom:28px; } .hero-buttons{ display:flex; justify-content:center; gap:12px; } .button{ min-width:190px; height:46px; display:flex; justify-content:center; align-items:center; border-radius:25px; font-size:13px; font-weight:700; transition:.2s; } .button:hover{ transform:translateY(-2px); } .button-white{ background:white; color:#e71937; } .button-transparent{ border:1px solid rgba(255,255,255,.65); color:white; } /* ================= GENERAL ================= */ .section{ max-width:1180px; margin:auto; padding:72px 25px; } .section-head{ margin-bottom:30px; } .section-head h2{ font-size:28px; font-weight:800; letter-spacing:-.5px; margin-bottom:5px; } .section-head p{ color:#858585; font-size:13px; } /* ================= QUICK ACCESS ================= */ .quick-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:15px; } .quick{ background:#fff; border:1px solid #e9e9e9; border-radius:16px; padding:23px; transition:.2s; } .quick:hover{ transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,.06); } .quick-icon{ width:42px; height:42px; background:#fde8ec; color:#e71937; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:19px; margin-bottom:15px; } .quick h3{ font-size:15px; margin-bottom:5px; } .quick p{ font-size:12px; color:#8b8b8b; } /* ================= NEXT MATCH ================= */ .next-match{ background:#111; color:white; border-radius:20px; padding:35px; display:flex; align-items:center; justify-content:space-between; gap:25px; } .match-label{ color:#e71937; font-size:10px; font-weight:800; letter-spacing:1px; margin-bottom:8px; } .next-match h3{ font-size:22px; margin-bottom:4px; } .next-match p{ color:#999; font-size:13px; } .match-date{ text-align:center; min-width:120px; } .match-date strong{ display:block; font-size:24px; } .match-date span{ color:#999; font-size:11px; } /* ================= NEWS ================= */ .news-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } .news-card{ background:white; border:1px solid #e8e8e8; border-radius:17px; overflow:hidden; transition:.2s; } .news-card:hover{ transform:translateY(-4px); box-shadow:0 12px 30px rgba(0,0,0,.07); } .news-image{ height:190px; background: linear-gradient(135deg,#ed1938,#c9092a); color:white; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:900; letter-spacing:1px; } .news-body{ padding:20px; } .news-category{ color:#e71937; font-size:10px; font-weight:800; letter-spacing:.8px; margin-bottom:8px; } .news-body h3{ font-size:16px; line-height:1.35; margin-bottom:9px; } .news-body p{ font-size:12px; color:#777; line-height:1.6; } /* ================= PLANTEL ================= */ .players{ display:grid; grid-template-columns:repeat(5,1fr); gap:14px; } .player{ background:white; border:1px solid #e8e8e8; border-radius:16px; padding:20px 12px; text-align:center; } .player-number{ width:54px; height:54px; margin:0 auto 13px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#e71937; color:white; font-size:18px; font-weight:900; } .player h3{ font-size:13px; margin-bottom:4px; } .player p{ font-size:11px; color:#888; } /* ================= TABLE ================= */ .table-box{ background:white; border:1px solid #e7e7e7; border-radius:17px; overflow:hidden; } table{ width:100%; border-collapse:collapse; } th{ background:#fafafa; color:#888; font-size:11px; text-align:left; padding:15px; } td{ padding:15px; border-top:1px solid #eeeeee; font-size:12px; } td:first-child{ font-weight:800; color:#e71937; } /* ================= CLUB ================= */ .club{ background:#111; color:white; border-radius:20px; padding:40px; } .club h2{ font-size:25px; margin-bottom:15px; } .club p{ max-width:850px; color:#bcbcbc; font-size:13px; line-height:1.8; } .club-values{ margin-top:28px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; } .value{ border:1px solid #333; border-radius:13px; padding:18px; } .value strong{ display:block; font-size:13px; margin-bottom:5px; } .value span{ color:#888; font-size:11px; } /* ================= PHOTOS ================= */ .photos{ display:grid; grid-template-columns:repeat(3,1fr); gap:15px; } .photo{ height:180px; border-radius:16px; background: linear-gradient(135deg,#ed1938,#c9092a); display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:14px; } /* ================= FOOTER ================= */ footer{ background:#050505; color:white; text-align:center; padding:55px 20px 25px; } .footer-logo{ width:58px; height:58px; margin:0 auto 13px; } .footer-logo img{ width:100%; height:100%; object-fit:contain; } footer h2{ font-size:18px; margin-bottom:6px; } footer p{ color:#888; font-size:12px; } .footer-bottom{ max-width:1100px; margin:32px auto 0; padding-top:18px; border-top:1px solid #222; color:#666; font-size:10px; } /* ================= MOBILE ================= */ @media(max-width:900px){ .header{ height:auto; padding:12px 18px; flex-direction:column; gap:10px; } .navigation{ flex-wrap:wrap; justify-content:center; } .quick-grid, .news-grid{ grid-template-columns:repeat(2,1fr); } .players{ grid-template-columns:repeat(3,1fr); } } @media(max-width:600px){ .hero{ min-height:510px; } .hero h1{ font-size:38px; } .hero-buttons{ flex-direction:column; align-items:center; } .button{ width:100%; max-width:290px; } .section{ padding:58px 18px; } .quick-grid, .news-grid, .players, .photos{ grid-template-columns:1fr; } .next-match{ flex-direction:column; align-items:flex-start; } .match-date{ text-align:left; } .club{ padding:28px 22px; } .club-values{ grid-template-columns:1fr; } } </style>
 
 </head>
 
@@ -708,20 +56,13 @@ footer p{
 
 <h1>BIRMINGHAM FC</h1>
 
-<p>
-Sitio oficial del club.<br>
-Pasión roja y blanca, partido a partido.
-</p>
+<p> Sitio oficial del club.<br> Pasión roja y blanca, partido a partido. </p>
 
 <div class="hero-buttons">
 
-<a href="#partidos" class="button button-white">
-Próximos partidos →
-</a>
+<a href="#partidos" class="button button-white"> Próximos partidos → </a>
 
-<a href="#novedades" class="button button-transparent">
-Últimas novedades
-</a>
+<a href="#novedades" class="button button-transparent"> Últimas novedades </a>
 
 </div>
 
@@ -737,9 +78,7 @@ Próximos partidos →
 
 <h2>Accesos directos</h2>
 
-<p>
-Todo lo que necesitás de Birmingham FC en un solo lugar.
-</p>
+<p> Todo lo que necesitás de Birmingham FC en un solo lugar. </p>
 
 </div>
 
@@ -825,9 +164,7 @@ Todo lo que necesitás de Birmingham FC en un solo lugar.
 
 <div>
 
-<div class="match-label">
-COMPETENCIA OFICIAL
-</div>
+<div class="match-label"> COMPETENCIA OFICIAL </div>
 
 <h3>Birmingham FC</h3>
 
@@ -863,24 +200,15 @@ COMPETENCIA OFICIAL
 
 <article class="news-card">
 
-<div class="news-image">
-BIRMINGHAM FC
-</div>
+<div class="news-image"> BIRMINGHAM FC </div>
 
 <div class="news-body">
 
-<div class="news-category">
-CLUB
-</div>
+<div class="news-category"> CLUB </div>
 
-<h3>
-Birmingham FC cerró su pretemporada
-</h3>
+<h3> Birmingham FC cerró su pretemporada </h3>
 
-<p>
-El equipo finalizó su preparación y quedó listo
-para afrontar la competencia oficial.
-</p>
+<p> El equipo finalizó su preparación y quedó listo para afrontar la competencia oficial. </p>
 
 </div>
 
@@ -888,24 +216,15 @@ para afrontar la competencia oficial.
 
 <article class="news-card">
 
-<div class="news-image">
-NUEVO REFUERZO
-</div>
+<div class="news-image"> NUEVO REFUERZO </div>
 
 <div class="news-body">
 
-<div class="news-category">
-EQUIPO
-</div>
+<div class="news-category"> EQUIPO </div>
 
-<h3>
-Mathias Actis, el nuevo delantero
-</h3>
+<h3> Mathias Actis, el nuevo delantero </h3>
 
-<p>
-El dorsal 9 llega con la misión de aportar
-gol y presencia ofensiva al equipo.
-</p>
+<p> El dorsal 9 llega con la misión de aportar gol y presencia ofensiva al equipo. </p>
 
 </div>
 
@@ -913,24 +232,15 @@ gol y presencia ofensiva al equipo.
 
 <article class="news-card">
 
-<div class="news-image">
-NUEVA INDUMENTARIA
-</div>
+<div class="news-image"> NUEVA INDUMENTARIA </div>
 
 <div class="news-body">
 
-<div class="news-category">
-CLUB
-</div>
+<div class="news-category"> CLUB </div>
 
-<h3>
-Nueva indumentaria oficial
-</h3>
+<h3> Nueva indumentaria oficial </h3>
 
-<p>
-El club presentó su nueva camiseta para la
-temporada 2026.
-</p>
+<p> El club presentó su nueva camiseta para la temporada 2026. </p>
 
 </div>
 
@@ -954,65 +264,25 @@ temporada 2026.
 
 <div class="players">
 
-<div class="player">
-<div class="player-number">1</div>
-<h3>Damian</h3>
-<p>Golero</p>
-</div>
+<div class="player"> <div class="player-number">1</div> <h3>Damian</h3> <p>Golero</p> </div>
 
-<div class="player">
-<div class="player-number">3</div>
-<h3>Sebastian</h3>
-<p>Defensa</p>
-</div>
+<div class="player"> <div class="player-number">3</div> <h3>Sebastian</h3> <p>Defensa</p> </div>
 
-<div class="player">
-<div class="player-number">2</div>
-<h3>Rodrigo</h3>
-<p>Defensa</p>
-</div>
+<div class="player"> <div class="player-number">2</div> <h3>Rodrigo</h3> <p>Defensa</p> </div>
 
-<div class="player">
-<div class="player-number">4</div>
-<h3>Tony</h3>
-<p>Defensa</p>
-</div>
+<div class="player"> <div class="player-number">4</div> <h3>Tony</h3> <p>Defensa</p> </div>
 
-<div class="player">
-<div class="player-number">5</div>
-<h3>Mauricio Silva</h3>
-<p>Mediocampista</p>
-</div>
+<div class="player"> <div class="player-number">5</div> <h3>Mauricio Silva</h3> <p>Mediocampista</p> </div>
 
-<div class="player">
-<div class="player-number">7</div>
-<h3>Elias Coimbra</h3>
-<p>Mediocampista</p>
-</div>
+<div class="player"> <div class="player-number">7</div> <h3>Elias Coimbra</h3> <p>Mediocampista</p> </div>
 
-<div class="player">
-<div class="player-number">8</div>
-<h3>Ezequiel Coimbra</h3>
-<p>Volante</p>
-</div>
+<div class="player"> <div class="player-number">8</div> <h3>Ezequiel Coimbra</h3> <p>Volante</p> </div>
 
-<div class="player">
-<div class="player-number">10</div>
-<h3>Kevin Marquez</h3>
-<p>Enganche</p>
-</div>
+<div class="player"> <div class="player-number">10</div> <h3>Kevin Marquez</h3> <p>Enganche</p> </div>
 
-<div class="player">
-<div class="player-number">9</div>
-<h3>Mathias Actis</h3>
-<p>Delantero</p>
-</div>
+<div class="player"> <div class="player-number">9</div> <h3>Mathias Actis</h3> <p>Delantero</p> </div>
 
-<div class="player">
-<div class="player-number">11</div>
-<h3>Facundo Robertt</h3>
-<p>Volante</p>
-</div>
+<div class="player"> <div class="player-number">11</div> <h3>Facundo Robertt</h3> <p>Volante</p> </div>
 
 </div>
 
@@ -1038,11 +308,7 @@ temporada 2026.
 
 <tr>
 
-<th>#</th>
-<th>Equipo</th>
-<th>PTS</th>
-<th>PJ</th>
-<th>DG</th>
+<th>#</th> <th>Equipo</th> <th>PTS</th> <th>PJ</th> <th>DG</th>
 
 </tr>
 
@@ -1050,29 +316,11 @@ temporada 2026.
 
 <tbody>
 
-<tr>
-<td>1</td>
-<td>Próximamente</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
+<tr> <td>1</td> <td>Próximamente</td> <td>—</td> <td>—</td> <td>—</td> </tr>
 
-<tr>
-<td>2</td>
-<td>Birmingham FC</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
+<tr> <td>2</td> <td>Birmingham FC</td> <td>—</td> <td>—</td> <td>—</td> </tr>
 
-<tr>
-<td>3</td>
-<td>Próximamente</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
+<tr> <td>3</td> <td>Próximamente</td> <td>—</td> <td>—</td> <td>—</td> </tr>
 
 </tbody>
 
@@ -1125,9 +373,7 @@ Cada partido es una oportunidad para honrar nuestra camiseta.
 
 <strong>Competencia</strong>
 
-<span>
-Competir, mejorar y crecer.
-</span>
+<span> Competir, mejorar y crecer. </span>
 
 </div>
 
@@ -1135,9 +381,7 @@ Competir, mejorar y crecer.
 
 <strong>Respeto</strong>
 
-<span>
-Dentro y fuera de la cancha.
-</span>
+<span> Dentro y fuera de la cancha. </span>
 
 </div>
 
@@ -1145,9 +389,7 @@ Dentro y fuera de la cancha.
 
 <strong>Esfuerzo</strong>
 
-<span>
-Dar todo por la camiseta.
-</span>
+<span> Dar todo por la camiseta. </span>
 
 </div>
 
@@ -1199,9 +441,7 @@ Dar todo por la camiseta.
 
 <h2>BIRMINGHAM FC</h2>
 
-<p>
-Pasión roja y blanca, partido a partido.
-</p>
+<p> Pasión roja y blanca, partido a partido. </p>
 
 <div class="footer-bottom">
 
@@ -1211,5 +451,4 @@ Pasión roja y blanca, partido a partido.
 
 </footer>
 
-</body>
-</html>
+</body> </html>

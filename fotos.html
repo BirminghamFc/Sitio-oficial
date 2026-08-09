@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fotografías | Birmingham FC</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f7f8;
+    color:#111;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HEADER */
+
+header{
+    height:72px;
+
+    background:white;
+
+    border-bottom:1px solid #e8e8e8;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+}
+
+.brand{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:14px;
+
+    font-weight:800;
+}
+
+.brand img{
+    width:43px;
+
+    height:43px;
+
+    object-fit:contain;
+}
+
+nav{
+    display:flex;
+
+    gap:5px;
+}
+
+nav a{
+    padding:9px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#444;
+}
+
+nav a:hover{
+    background:#f4f4f4;
+}
+
+nav a.active{
+    background:#e71937;
+
+    color:white;
+}
+
+/* HERO */
+
+.page-hero{
+
+    background:
+
+    radial-gradient(
+        circle at 50% 20%,
+        rgba(255,255,255,.14),
+        transparent 35%
+    ),
+
+    linear-gradient(
+        135deg,
+        #ef1938,
+        #c80729
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:65px 20px;
+}
+
+.page-hero img{
+
+    width:75px;
+
+    height:75px;
+
+    object-fit:contain;
+
+    margin-bottom:15px;
+}
+
+.page-hero h1{
+
+    font-size:40px;
+
+    font-weight:900;
+
+    margin-bottom:7px;
+}
+
+.page-hero p{
+
+    font-size:14px;
+
+    opacity:.9;
+}
+
+/* CONTENEDOR */
+
+.container{
+
+    width:88%;
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+section{
+
+    padding:60px 0;
+}
+
+/* TITULO */
+
+.section-title{
+
+    margin-bottom:30px;
+}
+
+.section-title h2{
+
+    font-size:27px;
+
+    margin-bottom:5px;
+}
+
+.section-title p{
+
+    color:#888;
+
+    font-size:13px;
+}
+
+/* GALERIA */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:18px;
+}
+
+.photo{
+
+    height:230px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ed1938,
+        #c90729
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:900;
+
+    letter-spacing:.5px;
+
+    transition:.2s;
+
+    border:1px solid #ddd;
+}
+
+.photo:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 14px 30px rgba(0,0,0,.10);
+}
+
+.photo span{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    right:0;
+
+    padding:18px;
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.7)
+    );
+
+    font-size:12px;
+
+    padding-top:40px;
+}
+
+/* DESTAQUE */
+
+.photo.big{
+
+    grid-column:
+    span 2;
+
+    height:300px;
+
+    font-size:22px;
+}
+
+/* AVISO */
+
+.info{
+
+    margin-top:35px;
+
+    background:white;
+
+    border:1px solid #e6e6e6;
+
+    border-radius:18px;
+
+    padding:25px;
+}
+
+.info h3{
+
+    font-size:17px;
+
+    margin-bottom:7px;
+}
+
+.info p{
+
+    color:#888;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#050505;
+
+    color:white;
+
+    text-align:center;
+
+    padding:45px 20px 25px;
+}
+
+.footer-logo{
+
+    width:55px;
+
+    height:55px;
+
+    margin:0 auto 12px;
+}
+
+.footer-logo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+}
+
+footer h2{
+
+    font-size:18px;
+
+    margin-bottom:5px;
+}
+
+footer p{
+
+    color:#888;
+
+    font-size:12px;
+}
+
+.footer-bottom{
+
+    border-top:1px solid #222;
+
+    margin:28px auto 0;
+
+    padding-top:17px;
+
+    color:#666;
+
+    font-size:10px;
+
+    max-width:1000px;
+}
+
+/* TABLET */
+
+@media(max-width:850px){
+
+    .gallery{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .photo.big{
+
+        grid-column:
+        span 2;
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header{
+
+        height:auto;
+
+        padding:12px 18px;
+
+        flex-direction:column;
+
+        gap:10px;
+    }
+
+    nav{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+    .page-hero h1{
+
+        font-size:34px;
+    }
+
+    .gallery{
+
+        grid-template-columns:1fr;
+    }
+
+    .photo,
+    .photo.big{
+
+        grid-column:auto;
+
+        height:220px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<a href="index.html" class="brand">
+
+<img src="escudo.png" alt="Birmingham FC">
+
+<span>BIRMINGHAM FC</span>
+
+</a>
+
+<nav>
+
+<a href="index.html">
+Inicio
+</a>
+
+<a href="partidos.html">
+Partidos
+</a>
+
+<a href="novedades.html">
+Novedades
+</a>
+
+<a href="plantilla.html">
+Plantilla
+</a>
+
+<a href="competicion.html">
+Competición
+</a>
+
+<a href="fotos.html" class="active">
+Fotografías
+</a>
+
+<a href="#">
+El Club
+</a>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+<img src="escudo.png" alt="Escudo Birmingham FC">
+
+<h1>
+FOTOGRAFÍAS
+</h1>
+
+<p>
+Los momentos que construyen nuestra historia
+</p>
+
+</section>
+
+<!-- GALERIA -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Galería
+</h2>
+
+<p>
+Birmingham FC · Temporada 2026
+</p>
+
+</div>
+
+<div class="gallery">
+
+<div class="photo big">
+
+BIRMINGHAM FC
+
+<span>
+Nuestro equipo
+</span>
+
+</div>
+
+<div class="photo">
+
+PARTIDOS
+
+<span>
+Competencia oficial
+</span>
+
+</div>
+
+<div class="photo">
+
+PLANTEL
+
+<span>
+Jugadores
+</span>
+
+</div>
+
+<div class="photo">
+
+EQUIPO
+
+<span>
+La familia Birmingham
+</span>
+
+</div>
+
+<div class="photo">
+
+COMPETENCIA
+
+<span>
+Temporada 2026
+</span>
+
+</div>
+
+<div class="photo">
+
+CAMISETA
+
+<span>
+Nueva indumentaria
+</span>
+
+</div>
+
+<div class="photo">
+
+2026
+
+<span>
+Nuestra historia
+</span>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<h3>
+Nuestra historia en imágenes
+</h3>
+
+<p>
+
+Este espacio estará dedicado a las fotografías
+de Birmingham FC. Acá iremos compartiendo
+momentos de los partidos, entrenamientos,
+presentaciones, festejos y todo aquello que
+forme parte de nuestra historia.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+
+<img src="escudo.png" alt="Birmingham FC">
+
+</div>
+
+<h2>
+BIRMINGHAM FC
+</h2>
+
+<p>
+Pasión roja y blanca, partido a partido.
+</p>
+
+<div class="footer-bottom">
+
+© 2026 Birmingham FC · Sitio oficial
+
+</div>
+
+</footer>
+
+</body>
+</html>

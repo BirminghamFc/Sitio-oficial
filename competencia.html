@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Competencia Oficial | Birmingham FC</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7f7f8;
+    color:#111;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HEADER */
+
+header{
+    height:72px;
+    background:#fff;
+    border-bottom:1px solid #e8e8e8;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:14px;
+    font-weight:800;
+}
+
+.brand img{
+    width:43px;
+    height:43px;
+    object-fit:contain;
+}
+
+nav{
+    display:flex;
+    gap:5px;
+}
+
+nav a{
+    padding:9px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    color:#444;
+}
+
+nav a:hover{
+    background:#f4f4f4;
+}
+
+nav a.active{
+    background:#e71937;
+    color:white;
+}
+
+/* HERO */
+
+.page-hero{
+    background:
+    radial-gradient(
+        circle at 50% 20%,
+        rgba(255,255,255,.14),
+        transparent 35%
+    ),
+    linear-gradient(
+        135deg,
+        #ef1938,
+        #c80729
+    );
+
+    color:white;
+    text-align:center;
+    padding:65px 20px;
+}
+
+.page-hero img{
+    width:75px;
+    height:75px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.page-hero h1{
+    font-size:38px;
+    font-weight:900;
+    margin-bottom:7px;
+}
+
+.page-hero p{
+    font-size:14px;
+    opacity:.9;
+}
+
+/* CONTENIDO */
+
+.container{
+    width:88%;
+    max-width:850px;
+    margin:auto;
+}
+
+section{
+    padding:60px 0;
+}
+
+/* NOTICIA */
+
+.article{
+    background:white;
+    border:1px solid #e6e6e6;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 8px 25px rgba(0,0,0,.04);
+}
+
+.category{
+    color:#e71937;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.8px;
+    margin-bottom:10px;
+}
+
+.article h2{
+    font-size:28px;
+    line-height:1.3;
+    margin-bottom:8px;
+}
+
+.date{
+    color:#aaa;
+    font-size:11px;
+    margin-bottom:30px;
+}
+
+.article h3{
+    font-size:20px;
+    margin-bottom:18px;
+}
+
+.article p{
+    color:#555;
+    font-size:15px;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.result{
+    background:#f7f7f8;
+    border-left:5px solid #e71937;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:30px;
+}
+
+.result strong{
+    font-size:24px;
+}
+
+/* BOTÓN */
+
+.back-button{
+    display:inline-block;
+    margin-top:15px;
+    background:#e71937;
+    color:white;
+    padding:12px 20px;
+    border-radius:25px;
+    font-size:13px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.back-button:hover{
+    background:#c80729;
+    transform:translateY(-2px);
+}
+
+/* FOOTER */
+
+footer{
+    background:#050505;
+    color:white;
+    text-align:center;
+    padding:45px 20px 25px;
+}
+
+.footer-logo{
+    width:55px;
+    height:55px;
+    margin:0 auto 12px;
+}
+
+.footer-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+footer h2{
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+footer p{
+    color:#888;
+    font-size:12px;
+}
+
+.footer-bottom{
+    border-top:1px solid #222;
+    margin:28px auto 0;
+    padding-top:17px;
+    color:#666;
+    font-size:10px;
+    max-width:1000px;
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    header{
+        height:auto;
+        padding:12px 18px;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .page-hero h1{
+        font-size:30px;
+    }
+
+    .article{
+        padding:25px 20px;
+    }
+
+    .article h2{
+        font-size:24px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<a href="index.html" class="brand">
+
+<img src="escudo.png" alt="Birmingham FC">
+
+<span>BIRMINGHAM FC</span>
+
+</a>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+
+<a href="partidos.html">Próximo partido</a>
+
+<a href="novedades.html" class="active">Novedades</a>
+
+<a href="club.html">Club</a>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+<img src="escudo.png" alt="Escudo Birmingham FC">
+
+<h1>BIRMINGHAM FC</h1>
+
+<p>COMPETENCIA OFICIAL</p>
+
+</section>
+
+<!-- ARTÍCULO -->
+
+<section>
+
+<div class="container">
+
+<article class="article">
+
+<div class="category">
+CLUB · COMPETENCIA OFICIAL
+</div>
+
+<h2>
+Birmingham FC comenzó oficialmente su competencia
+</h2>
+
+<div class="date">
+AGOSTO 2026
+</div>
+
+<div class="result">
+
+<strong>RESULTADO: BIRMINGHAM FC 2 - 5 CANABIDOL FC</strong>
+
+</div>
+
+<h3>
+Análisis del partido
+</h3>
+
+<p>
+Birmingham FC cayó 5-2, en un encuentro que dejó
+sensaciones diferentes a lo largo de los 60 minutos.
+</p>
+
+<p>
+El equipo tuvo un <strong>primer tiempo destacado</strong>,
+mostrando intensidad, personalidad y eficacia.
+Birmingham logró ponerse <strong>2-0 arriba</strong>
+gracias a los goles de <strong>Mauricio Silva</strong>
+y <strong>Ezequiel Coimbra</strong>, ambos provenientes
+de remates desde fuera del área.
+</p>
+
+<p>
+Durante esa primera mitad, el equipo encontró espacios,
+manejó el partido y demostró todo el potencial que tiene.
+</p>
+
+<p>
+Sin embargo, después del entretiempo, el rival
+<strong>repuso energías y cambió el desarrollo del encuentro</strong>,
+logrando imponerse ante un Birmingham que no consiguió
+encontrar soluciones a través de los cambios y terminó
+cediendo terreno hasta llegar al resultado final de 5-2.
+</p>
+
+<p>
+Más allá del resultado, nos quedamos con el
+<strong>análisis positivo del primer tiempo</strong>.
+Los primeros 30 minutos demostraron que este equipo
+tiene mucho potencial y que puede competir de igual a igual
+cuando encuentra su mejor versión.
+</p>
+
+<p>
+También somos conscientes de que <strong>hay mucho por mejorar</strong>.
+Este partido deja aprendizajes importantes y aspectos
+en los que debemos seguir trabajando para crecer como equipo.
+</p>
+
+<p>
+La derrota no cambia nuestro objetivo ni nuestra confianza.
+<strong>Seguimos optimistas, seguimos trabajando y seguimos
+creyendo en Birmingham FC.</strong>
+</p>
+
+<a href="novedades.html" class="back-button">
+← VOLVER A NOVEDADES
+</a>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+
+<img src="escudo.png" alt="Birmingham FC">
+
+</div>
+
+<h2>BIRMINGHAM FC</h2>
+
+<p>
+Pasión roja y blanca.
+</p>
+
+<div class="footer-bottom">
+
+© 2026 Birmingham FC · Sitio oficial
+
+</div>
+
+</footer>
+
+</body>
+
+</html>
